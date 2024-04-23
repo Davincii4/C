@@ -99,9 +99,18 @@ importers:
       '@percy/ember':
         specifier: 4.2.0
         version: 4.2.0
+      '@percy/playwright':
+        specifier: ^1.0.5
+        version: 1.0.5(playwright-core@1.43.1)
+      '@playwright/test':
+        specifier: ^1.43.1
+        version: 1.43.1
       '@sinonjs/fake-timers':
         specifier: 11.2.2
         version: 11.2.2
+      '@types/node':
+        specifier: ^20.12.7
+        version: 20.12.7
       '@zestia/ember-auto-focus':
         specifier: 5.1.0
         version: 5.1.0(ember-source@5.8.0(@babel/core@7.24.4)(@glimmer/component@1.1.2(@babel/core@7.24.4))(rsvp@4.8.5)(webpack@5.91.0))(webpack@5.91.0)
@@ -1447,6 +1456,12 @@ packages:
     resolution: {integrity: sha512-zAFlK4CPCC55mnZCtYRJxdQGQ69q1e99xy0z1JkZNe56HL5jShtG3JDdf9T6WH/H+snECdv0oPCwY40gAjZmWA==}
     engines: {node: '>=14'}
 
+  '@percy/playwright@1.0.5':
+    resolution: {integrity: sha512-5WNNkua1CzWm0suyfAqRxPuXOEPd9Vs79759DpgPO0r/QACDcICCLCmAOM+urGlVj17uZqsdC2rMK7MphEXslw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      playwright-core: '>=1'
+
   '@percy/sdk-utils@1.28.3':
     resolution: {integrity: sha512-0qzyW28U4p/GRSx0mxu+O5dygtECk5uFWoxAbDVGjnTodvH4LKa6nfjr1da+Ebi9w1jW4cNBq1eVGT3Riga/vw==}
     engines: {node: '>=14'}
@@ -1462,6 +1477,11 @@ packages:
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+
+  '@playwright/test@1.43.1':
+    resolution: {integrity: sha512-HgtQzFgNEEo4TE22K/X7sYTYNqEMMTZmFS8kTq6m8hXj+m1D8TgwgIbumHddJa9h4yl4GkKb8/bgAl2+g7eDgA==}
+    engines: {node: '>=16'}
+    hasBin: true
 
   '@pnpm/constants@7.1.1':
     resolution: {integrity: sha512-31pZqMtjwV+Vaq7MaPrT1EoDFSYwye3dp6BiHIGRJmVThCQwySRKM7hCvqqI94epNkqFAAYoWrNynWoRYosGdw==}
@@ -1734,7 +1754,7 @@ packages:
     resolution: {integrity: sha512-tbsV1jPne5CkFQCgPBcDOt30ItF7aJoZL997JSF7MhGQqOeT3svWRYxiqlfA5RUdlHN6Fi+EI9bxqbdyAUZjYQ==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
-      eslint: ^7.0.0 || ^8.0.0
+      eslint: '*'
       typescript: '*'
     peerDependenciesMeta:
       typescript:
@@ -4614,6 +4634,11 @@ packages:
     os: [darwin]
     deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
 
+  fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -6450,6 +6475,16 @@ packages:
   pkg-up@3.1.0:
     resolution: {integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==}
     engines: {node: '>=8'}
+
+  playwright-core@1.43.1:
+    resolution: {integrity: sha512-EI36Mto2Vrx6VF7rm708qSnesVQKbxEWvPrfA1IPY6HgczBplDx7ENtx+K2n4kJ41sLLkuGfmb0ZLSSXlDhqPg==}
+    engines: {node: '>=16'}
+    hasBin: true
+
+  playwright@1.43.1:
+    resolution: {integrity: sha512-V7SoH0ai2kNt1Md9E3Gwas5B9m8KR2GVvwZnAI6Pg0m3sh7UvgiYhRrhsziCmqMJNouPckiOhk8T+9bSAK0VIA==}
+    engines: {node: '>=16'}
+    hasBin: true
 
   pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
@@ -10408,6 +10443,10 @@ snapshots:
 
   '@percy/logger@1.28.3': {}
 
+  '@percy/playwright@1.0.5(playwright-core@1.43.1)':
+    dependencies:
+      playwright-core: 1.43.1
+
   '@percy/sdk-utils@1.28.3': {}
 
   '@percy/webdriver-utils@1.28.3(typescript@5.4.5)':
@@ -10421,6 +10460,10 @@ snapshots:
     optional: true
 
   '@pkgr/core@0.1.1': {}
+
+  '@playwright/test@1.43.1':
+    dependencies:
+      playwright: 1.43.1
 
   '@pnpm/constants@7.1.1': {}
 
@@ -15137,6 +15180,9 @@ snapshots:
       nan: 2.19.0
     optional: true
 
+  fsevents@2.3.2:
+    optional: true
+
   fsevents@2.3.3:
     optional: true
 
@@ -17214,6 +17260,14 @@ snapshots:
   pkg-up@3.1.0:
     dependencies:
       find-up: 3.0.0
+
+  playwright-core@1.43.1: {}
+
+  playwright@1.43.1:
+    dependencies:
+      playwright-core: 1.43.1
+    optionalDependencies:
+      fsevents: 2.3.2
 
   pluralize@8.0.0: {}
 
